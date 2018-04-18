@@ -1,36 +1,36 @@
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 html,
 body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
-    font-family: 'Coda', cursive;
+  background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+  font-family: 'Coda', cursive;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 h1 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
 }
 
 /*
@@ -38,47 +38,48 @@ h1 {
  */
 
 .deck {
-    width: 660px;
-    min-height: 680px;
-    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
-    padding: 32px;
-    border-radius: 10px;
-    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 0 3em;
+  align-items: center;
+  background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+  border-radius: 10px;
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 0 3em;
+  min-height: 680px;
+  padding: 32px;
+  width: 660px;
 }
 
 .deck .card {
-    height: 125px;
-    width: 125px;
-    background: #2e3d49;
-    font-size: 0;
-    color: #ffffff;
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  align-items: center;
+  background: #2e3d49;
+  border-radius: 8px;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  font-size: 0;
+  height: 125px;
+  justify-content: center;
+  width: 125px;
+  -webkit-animation-duration: 0.5s;
 }
 
 .deck .card.open {
-    transform: rotateY(0);
-    background: #02b3e4;
-    cursor: default;
+  background: #02b3e4;
+  cursor: default;
+  transform: rotateY(0);
 }
 
 .deck .card.show {
-    font-size: 33px;
+  font-size: 33px;
 }
 
 .deck .card.match {
-    cursor: default;
-    background: #02ccba;
-    font-size: 33px;
+  background: #02ccba;
+  cursor: default;
+  font-size: 33px;
 }
 
 /*
@@ -86,24 +87,94 @@ h1 {
  */
 
 .score-panel {
-    text-align: left;
-    width: 345px;
-    margin-bottom: 10px;
+  text-align: left;
+  margin-bottom: 10px;
+  width: 345px;
 }
 
 .score-panel .stars {
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    margin: 0 5px 0 0;
+  display: inline-block;
+  margin: 0 5px 0 0;
+  padding: 0;
 }
 
 .score-panel .stars li {
-    list-style: none;
-    display: inline-block;
+  display: inline-block;
+  list-style: none;
 }
 
 .score-panel .restart {
-    float: right;
-    cursor: pointer;
+  cursor: pointer;
+  float: right;
+  margin: 0 0 0 5px;
+}
+
+.score-panel .right-side {
+  float: right;
+}
+
+/*
+ * Styles for the Win modal.
+ */
+
+.win-screen {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  padding-top: 5%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.win-screen-content {
+  background-color: #fefefe;
+  border-radius: 10px;
+  color: #000;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 20px;
+  text-align: center;
+  width: 40%;
+}
+
+.win-heading {
+  font-size: 2em;
+  margin: 15px;
+}
+
+.star-score {
+  color: #FFD700;
+  display: flex;
+  font-size: 50px;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.big-star,
+.win-paragraph {
+  margin: 15px;
+}
+
+.win-restart-button {
+  background: #02ccba;
+  border: hidden;
+  border-radius: 10px;
+  color: #fefefe;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  height: 50px;
+  letter-spacing: 1px;
+  margin: 15px;
+  width: 250px;
+}
+
+.win-restart-button:hover {
+  background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
 }
