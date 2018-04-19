@@ -112,7 +112,7 @@ function compare() {
 // Increases the move count and changes the amount of stars based on your score
 function counterUp() {
   moves.text(moveCount);
-  if (moveCount == 12 || moveCount == 18 || moveCount == 24) {
+  if (moveCount == 15 || moveCount == 20) {
     const star = $('.fa-star').last();
     star.toggleClass('fa-star fa-star-o');
     starScore--;
